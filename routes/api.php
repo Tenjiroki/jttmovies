@@ -9,7 +9,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-// API роути для тестового завдання
 Route::prefix('v1')->group(function () {
     Route::get('genres', [GenreController::class, 'index']);
     Route::get('genres/{genre}', [GenreController::class, 'show']);

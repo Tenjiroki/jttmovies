@@ -1,31 +1,59 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Genre;
-use App\Models\Movie;
+use Illuminate\Http\Request;
 
 class GenreController extends Controller
 {
     public function index()
     {
-        $genres = Genre::all();
-        return response()->json($genres);
+        $genres = Genre::withCount('movies')->paginate(10);
+        return view('genres.index', compact('genres'));
+    }
+
+    public function create()
+    {
+        return view('genres.create');
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:genres'
+        ]);
+
+        Genre::create($validated);
+
+        return redirect()->route('genres.index')->with('success', 'Жанр створено!');
     }
 
     public function show(Genre $genre)
     {
-        $movies = Movie::with('genres')
-            ->whereHas('genres', function ($query) use ($genre) {
-                $query->where('genre_id', $genre->id);
-            })
-            ->where('is_published', true)
-            ->paginate(10);
+        $genre->load('movies');
+        return view('genres.show', compact('genre'));
+    }
 
-        return response()->json([
-            'genre' => $genre,
-            'movies' => $movies
+    public function edit(Genre $genre)
+    {
+        return view('genres.edit', compact('genre'));
+    }
+
+    public function update(Request $request, Genre $genre)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:genres,name,' . $genre->id
         ]);
+
+        $genre->update($validated);
+
+        return redirect()->route('genres.index')->with('success', 'Жанр оновлено!');
+    }
+
+    public function destroy(Genre $genre)
+    {
+        $genre->delete();
+        return redirect()->route('genres.index')->with('success', 'Жанр видалено!');
     }
 }

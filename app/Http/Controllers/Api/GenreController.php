@@ -16,9 +16,10 @@ class GenreController extends Controller
 
     public function show(Genre $genre)
     {
+        // Виправлення: використовуємо правильну назву поля в pivot таблиці
         $movies = Movie::with('genres')
             ->whereHas('genres', function ($query) use ($genre) {
-                $query->where('genre_id', $genre->id);
+                $query->where('genres.id', $genre->id); // або просто where('id', $genre->id)
             })
             ->where('is_published', true)
             ->paginate(10);
