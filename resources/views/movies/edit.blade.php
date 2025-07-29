@@ -3,7 +3,7 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-8">
-        <div class="card">
+        <div class="custom-card">
             <div class="card-header">
                 <h4>Редагувати фільм: {{ $movie->title }}</h4>
             </div>
@@ -23,8 +23,10 @@
                             Залиште порожнім, щоб залишити поточний постер. Поточний постер:
                         </small>
                         @if($movie->poster_url)
-                            <div class="mt-2">
-                                <img src="{{ $movie->poster_url }}" alt="Поточний постер" style="max-width: 200px; height: auto;">
+                            <div class="mt-3">
+                                <div class="movie-card" style="max-width: 250px;">
+                                    <img src="{{ $movie->poster_url }}" alt="Поточний постер" class="card-img-top" style="height: 300px; object-fit: cover;">
+                                </div>
                             </div>
                         @endif
                     </div>
@@ -43,8 +45,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary">Оновити фільм</button>
-                        <a href="{{ route('movies.show', $movie) }}" class="btn btn-secondary">Скасувати</a>
+                        <button type="submit" class="btn-custom-primary me-2">Оновити фільм</button>
+                        <a href="{{ route('movies.show', $movie) }}" class="btn-custom-secondary">Скасувати</a>
                     </div>
                 </form>
             </div>

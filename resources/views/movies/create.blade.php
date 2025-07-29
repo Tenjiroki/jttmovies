@@ -3,7 +3,7 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-8">
-        <div class="card">
+        <div class="custom-card">
             <div class="card-header">
                 <h4>Додати новий фільм</h4>
             </div>
@@ -35,8 +35,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary">Створити фільм</button>
-                        <a href="{{ route('movies.index') }}" class="btn btn-secondary">Скасувати</a>
+                        <button type="submit" class="btn-custom-primary me-2">Створити фільм</button>
+                        <a href="{{ route('movies.index') }}" class="btn-custom-secondary">Скасувати</a>
                     </div>
                 </form>
             </div>

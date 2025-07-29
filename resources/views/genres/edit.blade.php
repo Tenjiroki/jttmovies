@@ -3,7 +3,7 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-6">
-        <div class="card">
+        <div class="custom-card">
             <div class="card-header">
                 <h4>Редагувати жанр</h4>
             </div>
@@ -15,8 +15,8 @@
                         <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $genre->name) }}" required>
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary">Оновити жанр</button>
-                        <a href="{{ route('genres.index') }}" class="btn btn-secondary">Скасувати</a>
+                        <button type="submit" class="btn-custom-primary me-2">Оновити жанр</button>
+                        <a href="{{ route('genres.index') }}" class="btn-custom-secondary">Скасувати</a>
                     </div>
                 </form>
             </div>

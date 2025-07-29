@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1>Жанри</h1>
-    <a href="{{ route('genres.create') }}" class="btn btn-primary">Додати жанр</a>
+    <h1 class="page-title mb-0">Жанри</h1>
+    <a href="{{ route('genres.create') }}" class="btn-custom-primary">Додати жанр</a>
 </div>
 
-<div class="card">
+<div class="custom-card">
     <div class="card-body">
         <div class="table-responsive">
             <table class="table">
