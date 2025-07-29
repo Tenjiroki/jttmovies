@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Manrope:wght@400;600;700&family=Literata:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom styles based on your CSS */
         * {
             box-sizing: border-box;
         }
@@ -20,7 +19,6 @@
             padding: 0;
         }
 
-        /* Navigation styles */
         .navbar {
             background-color: #1E1E1C !important;
             height: 6.5rem;
@@ -59,7 +57,6 @@
             color: #ECE9E4 !important;
         }
 
-        /* Main content area */
         .main-content {
             position: relative;
             overflow: hidden;
@@ -67,7 +64,6 @@
             min-height: calc(100vh - 6.5rem);
         }
 
-        /* Page headings */
         .page-title {
             text-transform: uppercase;
             text-align: center;
@@ -78,7 +74,6 @@
             text-shadow: 2px 2px 4px rgba(30, 30, 28, 0.5);
         }
 
-        /* Custom card styles */
         .custom-card {
             background-color: #A3A5A3;
             border: none;
@@ -117,7 +112,6 @@
             color: #1E1E1C;
         }
 
-        /* Custom buttons */
         .btn-custom-primary {
             background-color: #C9635A;
             color: #ECE9E4;
@@ -149,7 +143,6 @@
             color: #ECE9E4;
         }
 
-        /* Form styles */
         .form-control {
             background-color: #ECE9E4;
             border: 0.14rem solid #C9635A;
@@ -173,7 +166,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Table styles */
         .table {
             background-color: #A3A5A3;
             color: #1E1E1C;
@@ -195,7 +187,6 @@
             border-color: #3C5240;
         }
 
-        /* Movie card specific styles */
         .movie-card {
             background-color: #A3A5A3;
             border: none;
@@ -224,7 +215,6 @@
             box-shadow: 0rem 0.3rem 1rem #1E1E1C;
         }
 
-        /* Badge styles */
         .badge {
             background-color: #C9635A !important;
             color: #ECE9E4;
@@ -245,7 +235,6 @@
             background-color: #1E1E1C !important;
         }
 
-        /* Alert styles */
         .alert-success {
             background-color: #3C5240;
             border-color: #2a3a2e;
@@ -258,7 +247,6 @@
             color: #ECE9E4;
         }
 
-        /* Pagination styles */
         .pagination .page-link {
             background-color: #D2A95F;
             border: 0.2rem solid #1E1E1C;
@@ -284,17 +272,14 @@
             color: #1E1E1C;
         }
 
-        /* Container adjustments */
         .container {
             background-color: transparent;
         }
 
-        /* Text color adjustments */
         .text-muted {
             color: #666 !important;
         }
 
-        /* Button group adjustments */
         .btn-group .btn {
             margin-right: 0.25rem;
         }

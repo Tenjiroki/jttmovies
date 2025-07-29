@@ -20,7 +20,6 @@ class MovieSeeder extends Seeder
         foreach ($movies as $movieData) {
             $movie = Movie::create($movieData);
 
-            // Прикріплюємо випадкові жанри
             $genres = Genre::inRandomOrder()->take(rand(1, 3))->pluck('id');
             $movie->genres()->attach($genres);
         }
